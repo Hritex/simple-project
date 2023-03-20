@@ -6,12 +6,18 @@
       (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
       <br><br>
       <ul class="list-group">
-        <li class="list-group-item"
-        *ngFor="let number of numbers"
-        *ngIf="number % 2 == 0">
-        <!-- Error: Cannot use more than 1 structural directive on the same element -->
-        {{ number }}
-        </li>
+        <div *ngIf="onlyOdd">
+          <li class="list-group-item"
+          *ngFor="let odd of oddNumbers">
+          {{ odd }}
+          </li>
+        </div>
+        <div *ngIf="!onlyOdd">
+          <li class="list-group-item"
+          *ngFor="let even of evenNumbers">
+          {{ even }}
+          </li>
+        </div>
       </ul>
     </div>
   </div>
