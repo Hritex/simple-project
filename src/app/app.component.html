@@ -7,7 +7,9 @@
       <br><br>
       <ul class="list-group">
         <li class="list-group-item"
-        *ngFor="let number of numbers">
+        *ngFor="let number of numbers"
+        *ngIf="number % 2 == 0">
+        <!-- Error: Cannot use more than 1 structural directive on the same element -->
         {{ number }}
         </li>
       </ul>
